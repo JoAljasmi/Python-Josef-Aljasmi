@@ -1,0 +1,18 @@
+{
+    "firstname": "Josef",
+    "lastname": "Aljasmi",
+    "age": 21,
+    "languages": [
+        "Python",
+        "C#",
+        "Javascript"
+    ],
+    "contactinfo": {
+        "phone": "0704504080",
+        "email": [
+            "josef@gmail.com",
+            "josef@hoymail.com",
+            "josefaljasmi@gmail.com"
+        ]
+    }
+}
