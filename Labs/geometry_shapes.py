@@ -7,9 +7,13 @@ class Shape:
         self.y = y
 
     def translate(self, dx, dy):
-        # Method to move the shape by dx and dy
-        self.x += dx
-        self.y += dy
+        try:
+            # Attempt to move the shape by dx and dy
+            self.x += dx
+            self.y += dy
+        except TypeError as e:
+            # Handle any TypeError that occurs during the translation
+            print(f"Please type a number: {e}")
 
     def area(self):
         # Method to calculate the area of the shape 
