@@ -5,8 +5,8 @@ class Shape:
     Base class for geometric shapes.
 
     Attributes:
-        x (float): X-coordinate of the shape's center.
-        y (float): Y-coordinate of the shape's center.
+        x : X-coordinate of the shape's center.
+        y : Y-coordinate of the shape's center.
     """
 
     def __init__(self, x, y):
@@ -14,8 +14,8 @@ class Shape:
         Initialize a shape with its center at (x, y).
 
         Args:
-            x (float): X-coordinate of the shape's center.
-            y (float): Y-coordinate of the shape's center.
+            x : X-coordinate of the shape's center.
+            y : Y-coordinate of the shape's center.
         """
         self.x = x
         self.y = y
@@ -31,11 +31,12 @@ class Shape:
         Raises:
             TypeError: If dx or dy are not numeric values.
         """
-        try:
+        if isinstance(dx, (int, float)) and isinstance(dy, (int, float)):
+            # Check if dx and dy are numeric (int or float)
             self.x += dx
             self.y += dy
-        except TypeError as e:
-            print(f"Translation error: {e}")
+        else:
+            print("Translation error: dx and dy must be numeric values.")
 
     def area(self):
         """
@@ -130,7 +131,7 @@ class Shape:
 
     def __repr__(self):
         """
-        Custom representation for the shape object (used for debugging).
+        Custom representation for the shape object .
 
         Returns:
             str: A string representation of the shape object.
@@ -139,7 +140,7 @@ class Shape:
 
     def __str__(self):
         """
-        Custom string representation for the shape object (used for printing).
+        Custom string representation for the shape object .
 
         Returns:
             str: A user-friendly string representation of the shape object.
