@@ -84,3 +84,35 @@ class Rectangle(Shape):
     def __str__(self):
         # Custom string representation for the rectangle object 
         return f'Rectangle at ({self.x}, {self.y}) with width {self.width} and height {self.height}'
+    
+
+# Subclass representing a circle
+class Circle(Shape):
+    def __init__(self, x, y, radius):
+        super().__init__(x, y)
+        self.radius = radius
+
+    def area(self):
+        # Calculate and return the area of the circle
+        return math.pi * self.radius ** 2
+
+    def perimeter(self):
+        # Calculate and return the perimeter of the circle
+        return 2 * math.pi * self.radius
+
+    def is_inside(self, point_x, point_y):
+        # Check if a point is inside the circle
+        distance = math.sqrt((self.x - point_x) ** 2 + (self.y - point_y) ** 2)
+        return distance <= self.radius
+
+    def is_unit_circle(self):
+        # Check if the circle is a unit circle 
+        return self.radius == 1
+
+    def __repr__(self):
+        # Custom representation for the circle object 
+        return f'Circle(x={self.x}, y={self.y}, radius={self.radius})'
+
+    def __str__(self):
+        # Custom string representation for the circle object 
+        return f'Circle at ({self.x}, {self.y}) with radius {self.radius}'
