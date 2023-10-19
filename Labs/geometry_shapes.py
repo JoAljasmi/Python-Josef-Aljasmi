@@ -7,13 +7,12 @@ class Shape:
         self.y = y
 
     def translate(self, dx, dy):
-        try:
-            # Attempt to move the shape by dx and dy
+        if isinstance(dx, (int, float)) and isinstance(dy, (int, float)):
+            # Check if dx and dy are numeric 
             self.x += dx
             self.y += dy
-        except TypeError as e:
-            # Handle any TypeError that occurs during the translation
-            print(f"Please type a number: {e}")
+        else:
+            print("Translation error: dx and dy must be numeric values.")
 
     def area(self):
         # Method to calculate the area of the shape 
