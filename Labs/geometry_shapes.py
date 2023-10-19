@@ -50,3 +50,37 @@ class Shape:
     def __str__(self):
         # Custom string representation for the shape object 
         return f'{self.__class__.__name__} at ({self.x}, {self.y})'
+    
+# Subclass representing a rectangle
+class Rectangle(Shape):
+    def __init__(self, x, y, width, height):
+        super().__init__(x, y)
+        self.width = width
+        self.height = height
+
+    def area(self):
+        # Calculate and return the area of the rectangle
+        return self.width * self.height
+
+    def perimeter(self):
+        # Calculate and return the perimeter of the rectangle
+        return 2 * (self.width + self.height)
+
+    def is_inside(self, point_x, point_y):
+        # Check if a point is inside the rectangle
+        return (
+            self.x - self.width / 2 <= point_x <= self.x + self.width / 2 and
+            self.y - self.height / 2 <= point_y <= self.y + self.height / 2
+        )
+
+    def is_square(self):
+        # Check if the rectangle is a square 
+        return self.width == self.height
+
+    def __repr__(self):
+        # Custom representation for the rectangle object 
+        return f'Rectangle(x={self.x}, y={self.y}, width={self.width}, height={self.height})'
+
+    def __str__(self):
+        # Custom string representation for the rectangle object 
+        return f'Rectangle at ({self.x}, {self.y}) with width {self.width} and height {self.height}'
