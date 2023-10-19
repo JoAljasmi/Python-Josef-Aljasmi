@@ -116,3 +116,16 @@ class Circle(Shape):
     def __str__(self):
         # Custom string representation for the circle object 
         return f'Circle at ({self.x}, {self.y}) with radius {self.radius}'
+
+if __name__ == "__main__":
+    # Example of how to use the classes
+    rectangle = Rectangle(0, 0, 4, 6)
+    circle = Circle(0, 0, 3)
+
+    print(rectangle)
+    print(f'Area: {rectangle.area()}, Perimeter: {rectangle.perimeter()}')
+    print(f'Is square: {rectangle.is_square()}')
+
+    print(circle)
+    print(f'Area: {circle.area()}, Perimeter: {circle.perimeter()}')
+    print(f'Is unit circle: {circle.is_unit_circle()}')
